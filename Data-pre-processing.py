@@ -29,7 +29,7 @@ admission_data_copy['Admit Month'] = admission_data_copy['Admit Date'].dt.month
 admission_data_copy['Admit Month'] = admission_data_copy['Admit Month'].apply(lambda x: calendar.month_abbr[x])
 
 
-# Remone unncessary features
+# Remove records with missing values
 admission_data_copy.drop(admission_data_copy.index[admission_data_copy["Ethnicity Prioritised Desc"] == "Don't Know"],inplace=True)
 admission_data_copy.drop(admission_data_copy.index[admission_data_copy["Ethnicity Prioritised Desc"] == "Not Stated"],inplace=True)
 admission_data_copy.drop(admission_data_copy.index[admission_data_copy["Gender Desc"] == "Unspecified"],inplace=True)
